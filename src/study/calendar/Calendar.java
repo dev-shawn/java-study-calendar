@@ -22,14 +22,18 @@ public class Calendar {
 
 	public static void main(String[] args) {
 
-		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
-		System.out.println("최대 일수를 보고자 하는 달을 입력하시오.");
-		Scanner sc = new Scanner(System.in);
 		Calendar cal = new Calendar();
-		int month = sc.nextInt();
+		Scanner sc = new Scanner(System.in);
 
-		System.out.printf("%d 월은 %d일 까지 있습니다.", month, cal.getMaxDaysOfMonth(month));
-		sc.close();
+		System.out.println("반복 횟수를 입력하시오.");
+		int repeat = sc.nextInt();
+
+		System.out.println("최대 일수를 보고자 하는 달을 입력하시오.");
+		for (int i = 0; i < repeat; i++) {
+			int month = sc.nextInt();
+			System.out.printf("%d 월은 %d일 까지 있습니다.", month, cal.getMaxDaysOfMonth(month));
+		}
+
 	}
 
 }
