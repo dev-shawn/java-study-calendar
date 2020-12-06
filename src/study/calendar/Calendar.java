@@ -23,17 +23,30 @@ public class Calendar {
 	public static void main(String[] args) {
 
 		Calendar cal = new Calendar();
+		String PROMPT = "Cal> ";
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("반복 횟수를 입력하시오.");
 		int repeat = sc.nextInt();
 
 		System.out.println("최대 일수를 보고자 하는 달을 입력하시오.");
-		for (int i = 0; i < repeat; i++) {
+		int i = 0;
+		while (i < repeat) {
+
+			System.out.print(PROMPT);
 			int month = sc.nextInt();
-			System.out.printf("%d 월은 %d일 까지 있습니다.", month, cal.getMaxDaysOfMonth(month));
+			if (month <= -1) {
+				break;
+			}
+			if (month > 12) {
+				continue;
+			}
+
+			System.out.printf("%d 월은 %d일 까지 있습니다.\n\n", month, cal.getMaxDaysOfMonth(month));
+			i++;
 		}
 
+		System.out.println("이용해주셔서 감사합니다.");
 	}
 
 }
